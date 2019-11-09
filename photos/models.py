@@ -34,7 +34,7 @@ class Image(models.Model):
     categories = models.ManyToManyField(categories)
     location = models.ForeignKey(Location)
     image = models.ImageField(upload_to='images/')
-
+    
 
 
 
