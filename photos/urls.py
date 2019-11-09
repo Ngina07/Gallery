@@ -5,7 +5,8 @@ from . import views
 
 
 urlpatterns=[
-    url('^$',views.welcome,name = 'welcome')
+    url('^$',views.display_images,name = 'Images'),
+    
 ]
 
 if settings.DEBUG:

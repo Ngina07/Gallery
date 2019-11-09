@@ -3,12 +3,9 @@ from django.http import HttpResponse,Http404
 from .models import Image
 
 
-def welcome(request):
-    return render(request, 'images.html')
-
 # Create your views here.
 
-def images(request):
+def display_images(request):
     '''
     Method to display all images uploade
     '''
