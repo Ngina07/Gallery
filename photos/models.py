@@ -34,6 +34,20 @@ class Image(models.Model):
     categories = models.ManyToManyField(categories)
     location = models.ForeignKey(Location)
     image = models.ImageField(upload_to='images/')
+
+
+    def __str__(self):
+        return self.title
+
+    def save_image(self):
+        self.save()
+
+    @classmethod
+    def all_images(cls):
+        images = cls.objects.all()
+
+        return images
+
     
 
 
