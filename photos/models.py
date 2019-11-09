@@ -16,7 +16,7 @@ class Location(models.Model):
     def delete_location(cls,location):
         cls.objects.filter(location=location).delete()
 
-class Category(models.Model):
+class categories(models.Model):
     category = models.CharField(max_length=50)
 
     def __str__(self):
@@ -28,7 +28,14 @@ class Category(models.Model):
     @classmethod
     def delete_category(cls,category):
         cls.objects.filter(category=category).delete()
-        
+
+class Image(models.Model):
+    title=models.CharField(max_length=50)
+    categories = models.ManyToManyField(categories)
+    location = models.ForeignKey(Location)
+    image = models.ImageField(upload_to='images/')
+
+
 
 
 
