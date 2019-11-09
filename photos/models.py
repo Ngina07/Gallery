@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 
 class Location(models.Model):
     location = models.CharField(max_length=100)
@@ -43,10 +44,23 @@ class Image(models.Model):
         self.save()
 
     @classmethod
+    def delete_image(cls,Image):
+        cls.objects.filter(image = image).delete()
+
+    @classmethod
     def all_images(cls):
         images = cls.objects.all()
 
         return images
+
+    @classmethod
+    def search_image(cls,categories):
+        images = cls.objects.filter(Q(categories__category=categories)| Q(title__icontains=categories))
+
+        return images
+
+
+
 
     
 
