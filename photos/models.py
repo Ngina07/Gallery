@@ -9,5 +9,9 @@ class Location(models.Model):
     class Meta:
         ordering = ['location']
 
+    def save_location(self):
+        self.save()
         
+
+
 
