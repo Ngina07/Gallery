@@ -16,48 +16,55 @@
     </script>
 </head>
 
+<body>
 
-<div class="container">
+
+
     <div class="row">
         <!-- Looping through news -->
         {% for image in images %}
 
 
         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 padding-0 hover ">
-            <img src="{{image.image.url}}" class=" img img-responsive" data-toggle="modal" data-target="#{{image.id}}">
+
+            <img src="{{image.image.url}}" class=" img img-responsive thumbnail" data-toggle="modal"
+                data-target="#{{image.id}}">
+
         </div>
 
 
         <!-- Modal -->
 
         <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
+            aria-hidden="true" style="color: burlywood; align-content:center">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <div class="modal-header text-center">
+                    <div class="modal-header text-center" style="background-color: #384c4e">
                         <h3 class="modal-title" id="exampleModalLongTitle">{{image.title}}</h3>
                         <h4 class="modal-title">{{image.location}}</h4>
+                        
 
 
 
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <!-- <span aria-hidden="true">&times;</span> -->
+
                         </button>
                     </div>
 
-                    <div class="modal-body">
-                        <!-- <div class="row"> -->
+                    <div class="modal-body" style="background-color: #384c4e">
+
                         <div class="text-center">
-                            <!-- <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10"> -->
-                            <img src='{{image.image.url}}' class="img-responsive" width=100% height=100% alt="Image">
-                            <!-- </div> -->
+
+                            <img src='{{image.image.url}}' class="img img-responsive gallery" 
+                                alt="Image">
+
                         </div>
-                        <!-- </div> -->
+
 
 
                     </div>
 
-                    <div class="modal-footer">
+                    <div class="modal-footer" style="background-color: #384c4e; color:black">
                         <!-- Target -->
                         <div class="form-group row">
                             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 padding-1">
@@ -86,7 +93,8 @@
     </div>
 
 
-</div>
 
 
-{% endblock %}
+
+    {% endblock %}
+</body>
