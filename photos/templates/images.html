@@ -7,7 +7,13 @@
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    
+
+    <script>
+        function copyToClipboard(element) {
+            $(element).select();
+            document.execCommand("copy");
+        }
+    </script>
 </head>
 
 
@@ -31,7 +37,7 @@
                     <div class="modal-header text-center">
                         <h3 class="modal-title" id="exampleModalLongTitle">{{image.title}}</h3>
                         <h4 class="modal-title">{{image.location}}</h4>
-                        
+
 
 
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -60,7 +66,12 @@
                             </div>
 
 
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 padding-2">
+                                <button class="btn btn-secondary"
+                                    onclick="copyToClipboard('#{{image.id}}-url')">Copy</button>
                             </div>
+                        </div>
+
 
 
                         <div class="text-center">
