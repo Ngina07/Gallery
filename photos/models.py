@@ -35,7 +35,7 @@ class Image(models.Model):
     title=models.CharField(max_length=50)
     categories = models.ManyToManyField(categories)
     location = models.ForeignKey(Location)
-    image = ImageField(blank=True, manual_crop= "1920x1080")
+    image = ImageField(blank=True, manual_crop="")
 
 
     def __str__(self):
