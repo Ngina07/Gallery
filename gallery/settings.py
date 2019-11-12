@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import django_heroku
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -32,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'photos',
-    'bootstrap3'
+    'bootstrap3',
+    
 ]
 
 MIDDLEWARE = [
@@ -72,6 +75,13 @@ TEMPLATES = [
         },
     },
 ]
+
+from decouple import config
+
+UPLOADCARE = {
+    'pub_key': 'bb0d884a7452646b86b1',
+    'secret': config('SECRET'),
+}
 
 WSGI_APPLICATION = 'gallery.wsgi.application'
 
